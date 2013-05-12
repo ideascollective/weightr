@@ -6,4 +6,3 @@ exports.Sequelize = Sequelize;
 exports.database = new Sequelize('weightr', 'root', null, {
   dialect: 'mysql'
 });
-

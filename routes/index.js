@@ -4,5 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Weightr' });
+  var message = (req.user) ? 'Logged in as: ' + req.user.username : null;
+
+  res.render('index', { title: 'Weightr', status: message });
 };
