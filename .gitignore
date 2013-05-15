@@ -1,0 +1,40 @@
+# -- IDE's files -----------------------------------------
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# sublimetext
+/*.sublime-project
+*.sublime-workspace
+
+# -- OS's files ------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.*
+!.gitignore
+*~
+
+# Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+#-- Project ------------------------------------
+.grunt
+lib
+node_modules
+_SpecRunner.html
+
+#Generated files-------------------------------
+js/app/templates.js
