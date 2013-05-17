@@ -13,6 +13,6 @@ database.sync().success(function() {
   console.log('Successfully created Table Profile');
 }).error(function(error) {
   console.log('Failed creating Table Profile');
-})
+});
 
 module.exports = WeightRecord;

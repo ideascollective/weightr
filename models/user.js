@@ -16,6 +16,6 @@ database.sync().success(function() {
   console.log('Successfully created Table User');
 }).error(function(error) {
   console.log('Failed creating Table User');
-})
+});
 
 module.exports = User;
