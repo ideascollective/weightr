@@ -12,18 +12,9 @@ exports.list = function(req, res){
 };
 
 exports.register = function(req, res) {
-  User.generateHash('asd', function(err, pw) {
-    User.create({ username: 'ignacio', password: pw }).success(function(u){
-
-      u.comparePassword('dddd', function(err, isMatch){
-        if (err) { console.log('Error:' + err); }
-
-        if (isMatch) {
-          console.log('Passwords are equals');
-        } else {
-          return res.redirect('/');
-        }
-      });
+  User.generateHash('password', function(err, pw) {
+    User.create({ username: 'user', password: pw }).success(function(user){
+      return res.redirect('/');
     }).error(function(error){
       console.log(error);
       res.redirect('/');
@@ -33,7 +24,9 @@ exports.register = function(req, res) {
 
 exports.login = function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
-    if (err) { return next(err); }
+    if (err) {
+      return next(err);
+    }
 
     if (!user) {
       console.log('Error: user doesnt exist. ' + info.message);
@@ -42,7 +35,9 @@ exports.login = function(req, res, next) {
     }
 
     req.logIn(user, function(err) {
-      if (err) { return next(err); }
+      if (err) {
+        return next(err);
+      }
 
       return res.redirect('/');
     });

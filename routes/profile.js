@@ -3,15 +3,15 @@
  * GET a user's Profile by ID
  */
 exports.get = function(req, res){
-  var o = {};
+  var user = {};
 
   if (req.user) {
-    o.logged = 'true';
-    o.user = req.user.username;
+    user.logged = 'true';
+    user.user = req.user.username;
   }
   else {
-    o.logged = 'false';
+    user.logged = 'false';
   }
 
-  res.send(o);
+  res.send(user);
 };

@@ -6,7 +6,7 @@ var Sequelize = require("../config/seqConfig.js").Sequelize,
 
 
 var User = database.define('User', {
-  username: {type: Sequelize.STRING, unique: true},
+  username: { type: Sequelize.STRING, unique: true },
   password: Sequelize.STRING
 }, {
   classMethods: {
