@@ -17,6 +17,7 @@ function logErrors(err, req, res, next) {
   next(err);
 }
 
+<<<<<<< HEAD
 /**
  * Default error handler for this server.
  * @param err {object} The error to log
@@ -30,6 +31,18 @@ function errorHandler(err, req, res, next) {
     error: err
   });
 }
+=======
+var express = require('express'),
+    routes = require('./routes'),
+    user = require('./routes/user'),
+    profile = require('./routes/profile'),
+    passport = require('passport'),
+    pasConfig = require('./config/pasConfig'),
+    http = require('http'),
+    path = require('path');
+
+var app = express();
+>>>>>>> 3a314ac8fd437793e38542995b40b76728d1eaab
 
 /**
  * Server configuration.
@@ -37,14 +50,26 @@ function errorHandler(err, req, res, next) {
 app.configure(function() {
   app.set('port', process.env.PORT || 3000);
   app.use(express.logger('dev'));
+<<<<<<< HEAD
 
   app.use(express.cookieParser('your secret here'));
   app.use(express.bodyParser());
   app.use(express.session());
+=======
+  app.use(express.cookieParser('your secret here'));
+  app.use(express.bodyParser());
+
+  app.use(express.session());
+
+>>>>>>> 3a314ac8fd437793e38542995b40b76728d1eaab
   app.use(express.methodOverride());
 
   app.use(passport.initialize());
   app.use(passport.session());
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3a314ac8fd437793e38542995b40b76728d1eaab
   app.use(app.router);
 
   app.use(logErrors);
@@ -53,10 +78,21 @@ app.configure(function() {
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
+<<<<<<< HEAD
 /**
  * Server routes
  */
 require('./routes/index')(app);
+=======
+app.get('/', routes.index);
+
+app.post('/login', user.login);
+app.get('/logout', user.logout);
+app.get('/register', user.register);
+
+app.get('/users', user.list);
+app.get('/profile', profile.get);
+>>>>>>> 3a314ac8fd437793e38542995b40b76728d1eaab
 
 /**
  * Server initialization
