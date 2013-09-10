@@ -1,0 +1,1 @@
+define(["jquery","postal","./main/landing.view"],function(e,t,n){var r={load:function(e){e.dispose(),e.addView(".wrapper",new n({channel:t.channel("application")})),e.render()}};return r});

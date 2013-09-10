@@ -1,0 +1,1 @@
+define(["jquery","postal","backbone","underscore","base.view"],function(e,t,n,r,i){var s=i.extend({template:"mainlayout.hbs",el:".wrapper"});return s});

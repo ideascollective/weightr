@@ -1,0 +1,1 @@
+define(["jquery"],function(e){var t={timedChunk:function(e,t,n,r){var i=e.concat();setTimeout(function(){var s=+(new Date);do t.call(n,i.shift());while(i.length>0&&+(new Date)-s<50);i.length>0?setTimeout(arguments.callee,25):r(e)},25)}};return t});
