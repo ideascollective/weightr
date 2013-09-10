@@ -1,5 +1,5 @@
-var Sequelize = require("../config/seqConfig.js").Sequelize,
-    database = require("../config/seqConfig.js").database;
+var Sequelize = require('../config/sequelizeConfig.js').Sequelize,
+    database = require('../config/sequelizeConfig.js').database;
 
 var WeightRecord = database.define('Weight', {
   Date: Sequelize.DATE,
